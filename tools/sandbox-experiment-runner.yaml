@@ -1,0 +1,26 @@
+name: "sandbox-experiment-runner"
+description: "Executes generated research experiments in isolated Docker or subprocess sandboxes with resource caps."
+input_schema:
+  type: object
+  properties:
+    action:
+      type: string
+      enum:
+        - "run_experiment"
+        - "monitor_status"
+        - "terminate_job"
+        - "get_logs"
+      description: "Experiment execution action."
+    command:
+      type: string
+      description: "Execution command string to run inside the sandbox."
+    timeout_seconds:
+      type: integer
+      description: "Maximum execution duration before termination."
+      default: 600
+    gpu_devices:
+      type: string
+      description: "GPU device indices allocated to this experiment (e.g., '0' or 'all')."
+      default: "0"
+  required:
+    - action

@@ -1,0 +1,25 @@
+name: "performance-metric-evaluator"
+description: "Computes performance metrics (IC, Sharpe, RMSE, AUC, rewards) and statistical significance against baselines."
+input_schema:
+  type: object
+  properties:
+    metric_type:
+      type: string
+      enum:
+        - "quant_finance"
+        - "tabular_ml"
+        - "llm_eval"
+        - "reinforcement_learning"
+      description: "Evaluation domain and metric family."
+      default: "quant_finance"
+    predictions_path:
+      type: string
+      description: "Path to prediction outputs or factor series."
+    ground_truth_path:
+      type: string
+      description: "Path to ground truth labels or market returns."
+    baseline_metrics:
+      type: object
+      description: "Baseline benchmark values for comparison."
+  required:
+    - metric_type

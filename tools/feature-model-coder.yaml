@@ -1,0 +1,31 @@
+name: "feature-model-coder"
+description: "Synthesizes, refactors, and edits feature engineering code, alpha factors, and model pipelines."
+input_schema:
+  type: object
+  properties:
+    action:
+      type: string
+      enum:
+        - "generate_factor"
+        - "generate_model"
+        - "edit_pipeline"
+        - "validate_syntax"
+      description: "Code authoring or refactoring action."
+    file_path:
+      type: string
+      description: "Relative path of the target code file."
+    code_content:
+      type: string
+      description: "Python code to write or patch into the experiment script."
+    framework:
+      type: string
+      enum:
+        - "pytorch"
+        - "qlib"
+        - "lightgbm"
+        - "scikit-learn"
+      description: "Underlying machine learning or quant framework."
+      default: "pytorch"
+  required:
+    - action
+    - file_path

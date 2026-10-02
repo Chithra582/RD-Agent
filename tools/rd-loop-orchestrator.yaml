@@ -1,0 +1,30 @@
+name: "rd-loop-orchestrator"
+description: "Orchestrates iterative R&D cycles: hypothesis proposing, experiment coding, execution, and feedback."
+input_schema:
+  type: object
+  properties:
+    action:
+      type: string
+      enum:
+        - "start_loop"
+        - "next_iteration"
+        - "get_status"
+        - "stop_loop"
+      description: "R&D loop control action."
+    scenario:
+      type: string
+      enum:
+        - "data_science"
+        - "kaggle"
+        - "qlib"
+        - "finetune"
+        - "rl"
+        - "general_model"
+      description: "Research scenario to execute."
+      default: "data_science"
+    max_iterations:
+      type: integer
+      description: "Maximum number of evolutionary R&D cycles to run."
+      default: 10
+  required:
+    - action

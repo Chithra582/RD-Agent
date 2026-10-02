@@ -1,0 +1,25 @@
+name: "rd-knowledge-graph-retriever"
+description: "Manages and queries historical research hypotheses, post-mortems, and validated factors."
+input_schema:
+  type: object
+  properties:
+    action:
+      type: string
+      enum:
+        - "query_similar"
+        - "record_finding"
+        - "get_top_factors"
+        - "export_graph"
+      description: "Knowledge graph retrieval or mutation action."
+    query_concept:
+      type: string
+      description: "Natural language research concept or factor formula to search."
+    finding_summary:
+      type: string
+      description: "Distilled research insight or empirical result to record."
+    top_k:
+      type: integer
+      description: "Maximum number of historical trials to retrieve."
+      default: 5
+  required:
+    - action

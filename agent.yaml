@@ -1,0 +1,22 @@
+spec_version: "0.1.0"
+name: "rd-agent"
+version: "1.0.0"
+description: "Research & Development Agent: Autonomous AI framework for industrial-grade data science, quantitative finance, factor mining, and RL experimentation."
+author: "Microsoft Research & OpenGAP Contributors"
+license: "MIT"
+metadata:
+  domain: "Data & Analytics / Autonomous Research & Development"
+  category: "Data & Analytics"
+  framework: "Microsoft RD-Agent Autonomous R&D Framework"
+  language: "Python"
+skills:
+  - "autonomous-hypothesis-generation"
+  - "experiment-code-synthesis"
+  - "sandboxed-execution-benchmarking"
+  - "evolving-knowledge-distillation"
+tools:
+  - "rd-loop-orchestrator"
+  - "feature-model-coder"
+  - "sandbox-experiment-runner"
+  - "performance-metric-evaluator"
+  - "rd-knowledge-graph-retriever"
